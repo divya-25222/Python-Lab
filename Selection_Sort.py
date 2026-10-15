@@ -1,14 +1,14 @@
 def selection_sort(arr):
-    for i in range(len(arr)-1):
-        min = i          #assume i is  min itself
-        for j in range(i+1,len(arr)):
-            if arr[j] < arr[min]:                         #to find min position index
-                min = j  # update minimum index
+    for i in range(len(arr) - 1):
+        min_index = i
+        for j in range(i + 1, len(arr)):
+            if arr[j] < arr[min_index]:
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]
 
-        arr[i], arr[min] = arr[min], arr[i]  # SWAP
+arr = eval(input("Enter your elements: "))
+print("Unsorted array:", arr)
 
-
-arr=eval(input("Enter the element: "))
-print(f'Unsorted Array : {arr}')
 selection_sort(arr)
-print(f'Sorted Array: {arr}')
+
+print("Sorted array:", arr)
